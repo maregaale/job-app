@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Olisails | job-app</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -12,12 +12,15 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
+                background: rgb(255,255,255);
+                background: radial-gradient(circle, #cccccc 0%, rgba(47,79,79,1) 100%);
                 color: #636b6f;
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
                 margin: 0;
+                position: relative;
+                z-index: 2;
             }
 
             .full-height {
@@ -28,6 +31,7 @@
                 align-items: center;
                 display: flex;
                 justify-content: center;
+                z-index: 5;
             }
 
             .position-ref {
@@ -36,8 +40,9 @@
 
             .top-right {
                 position: absolute;
-                right: 10px;
-                top: 18px;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 70%;
             }
 
             .content {
@@ -49,21 +54,50 @@
             }
 
             .links > a {
-                color: #636b6f;
-                padding: 0 25px;
+                
+                border-radius: 4px;
+                margin: 10px;
+                background-color: rgba(255, 255, 255, 0.5);
+                color: #000;
+                padding: 20px 25px;
                 font-size: 13px;
-                font-weight: 600;
+                font-weight: bold;
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
+                transition: background-color color .3s;
+            }
+
+            .links > a:hover {
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #fff;
             }
 
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            img {
+                width: 600px;
+                
+            }
+
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-image: url('../public/img/ANEMOS_1_BORLENGHI.png');
+                background-position: center;
+                background-size: cover;
+                opacity: 0.15;
+                z-index: 1;
+            }
         </style>
     </head>
     <body>
+        <div class="overlay"></div>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -71,30 +105,21 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-
+    
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+            
+            
+            {{-- logo veleria --}}
+            <div>
+                <img src="../public/img/OS_LOGO_WEB-1-e1548709972710.png" alt="">
             </div>
+            {{-- /logo veleria --}}
+            
         </div>
     </body>
 </html>
