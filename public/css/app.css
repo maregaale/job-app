@@ -1,5 +1,35 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito);
 @charset "UTF-8";
+html, body {
+  background: white;
+  background: radial-gradient(circle, #cccccc 0%, darkslategray 100%);
+  color: #636b6f;
+  font-family: "Nunito", sans-serif;
+  font-weight: 200;
+  height: 100vh;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+}
+html .navbar, body .navbar {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+html .overlay, body .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../../img/ANEMOS_1_BORLENGHI.png");
+  background-position: center;
+  background-size: cover;
+  opacity: 0.15;
+}
+
+.logo_header img {
+  width: 200px !important;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

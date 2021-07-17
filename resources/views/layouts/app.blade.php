@@ -7,7 +7,26 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+    <link rel="apple-touch-icon" sizes="57x57" href= "{{asset('apple-icon-57x57.png')}}">
+    <link rel="apple-touch-icon" sizes="60x60" href= "{{asset('apple -icon-60x60.png')}}">
+    <link rel="apple-touch-icon" sizes="72x72" href= "{{asset('apple-icon-72x72.png')}}">
+    <link rel="apple-touch-icon" sizes="76x76" href= "{{asset('apple-icon-76x76.png')}}">
+    <link rel="apple-touch-icon" sizes="114x114" href= "{{asset('apple-icon-114x114.png')}}">
+    <link rel="apple-touch-icon" sizes="120x120" href= "{{asset('apple-icon-120x120.png')}}">
+    <link rel="apple-touch-icon" sizes="144x144" href= "{{asset('apple-icon-144x144.png')}}">
+    <link rel="apple-touch-icon" sizes="152x152" href= "{{asset('apple-icon-152x152.png')}}">
+    <link rel="apple-touch-icon" sizes="180x180" href= "{{asset('apple-icon-180x180.png')}}">
+    <link rel="icon" type="image/png" sizes="192x192"  href= "{{asset('android-icon-192x192.png')}}">
+    <link rel="icon" type="image/png" sizes="32x32" href= "{{asset('favicon-32x32.png')}}">
+    <link rel="icon" type="image/png" sizes="96x96" href = "{{asset('favicon-96x96.png')}}">
+    <link rel="icon" type="image/png" sizes="16x16" href = "{{asset('favicon-16x16. png')}}">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>@yield('pageTitle')</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -16,15 +35,23 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    {{-- fontawesome --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('style')
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        
+        <div class="overlay">
+        </div>
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <div class="logo_header">
+                        <img src="{{asset('img/OS_LOGO_WEB-1-e1548709972710.png')}}" alt="">
+                    </div>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

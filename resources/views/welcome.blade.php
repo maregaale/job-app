@@ -4,6 +4,25 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
+        <link rel="apple-touch-icon" sizes="57x57" href= "{{asset('apple-icon-57x57.png')}}">
+        <link rel="apple-touch-icon" sizes="60x60" href= "{{asset('apple -icon-60x60.png')}}">
+        <link rel="apple-touch-icon" sizes="72x72" href= "{{asset('apple-icon-72x72.png')}}">
+        <link rel="apple-touch-icon" sizes="76x76" href= "{{asset('apple-icon-76x76.png')}}">
+        <link rel="apple-touch-icon" sizes="114x114" href= "{{asset('apple-icon-114x114.png')}}">
+        <link rel="apple-touch-icon" sizes="120x120" href= "{{asset('apple-icon-120x120.png')}}">
+        <link rel="apple-touch-icon" sizes="144x144" href= "{{asset('apple-icon-144x144.png')}}">
+        <link rel="apple-touch-icon" sizes="152x152" href= "{{asset('apple-icon-152x152.png')}}">
+        <link rel="apple-touch-icon" sizes="180x180" href= "{{asset('apple-icon-180x180.png')}}">
+        <link rel="icon" type="image/png" sizes="192x192"  href= "{{asset('android-icon-192x192.png')}}">
+        <link rel="icon" type="image/png" sizes="32x32" href= "{{asset('favicon-32x32.png')}}">
+        <link rel="icon" type="image/png" sizes="96x96" href = "{{asset('favicon-96x96.png')}}">
+        <link rel="icon" type="image/png" sizes="16x16" href = "{{asset('favicon-16x16. png')}}">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+
         <title>Olisails | job-app</title>
 
         <!-- Fonts -->
@@ -54,9 +73,9 @@
             }
 
             .links > a {
-                
+                display: inline-block;
                 border-radius: 4px;
-                margin: 10px;
+                margin: 0 30px;
                 background-color: rgba(255, 255, 255, 0.5);
                 color: #000;
                 padding: 20px 25px;
@@ -65,7 +84,9 @@
                 letter-spacing: .1rem;
                 text-decoration: none;
                 text-transform: uppercase;
-                transition: background-color color .3s;
+                transition: background-color .3s, color .3s;
+                min-width: 75px;
+                text-align: center;
             }
 
             .links > a:hover {
@@ -88,7 +109,7 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                background-image: url('../public/img/ANEMOS_1_BORLENGHI.png');
+                background-image: url('{{asset('img/ANEMOS_1_BORLENGHI.png')}}');
                 background-position: center;
                 background-size: cover;
                 opacity: 0.15;
@@ -102,7 +123,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/dashboard') }}">Dasboard</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
     
@@ -116,7 +137,7 @@
             
             {{-- logo veleria --}}
             <div>
-                <img src="../public/img/OS_LOGO_WEB-1-e1548709972710.png" alt="">
+                <img src="{{asset('img/OS_LOGO_WEB-1-e1548709972710.png')}}" alt="">
             </div>
             {{-- /logo veleria --}}
             
