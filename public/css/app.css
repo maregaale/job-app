@@ -11,6 +11,9 @@ html, body {
   position: relative;
   z-index: 2;
 }
+html main, body main {
+  position: relative;
+}
 html .navbar, body .navbar {
   background-color: rgba(255, 255, 255, 0.2);
 }
@@ -25,9 +28,24 @@ html .overlay, body .overlay {
   background-size: cover;
   opacity: 0.15;
 }
-
-.logo_header img {
+html .logo_header img, body .logo_header img {
   width: 200px !important;
+}
+html .table, body .table {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+html .fas, body .fas {
+  cursor: pointer;
+  margin: 0 4px;
+}
+html .fa-arrow-circle-down, body .fa-arrow-circle-down {
+  color: #e3342f;
+}
+html .fa-hammer, body .fa-hammer {
+  color: #CD853F;
+}
+html .fa-check-circle, body .fa-check-circle {
+  color: #38c172;
 }
 
 /*!

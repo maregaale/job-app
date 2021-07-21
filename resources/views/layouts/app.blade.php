@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -21,7 +22,6 @@
     <link rel="icon" type="image/png" sizes="32x32" href= "{{asset('favicon-32x32.png')}}">
     <link rel="icon" type="image/png" sizes="96x96" href = "{{asset('favicon-96x96.png')}}">
     <link rel="icon" type="image/png" sizes="16x16" href = "{{asset('favicon-16x16. png')}}">
-    <link rel="manifest" href="/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
@@ -29,6 +29,8 @@
     <title>@yield('pageTitle')</title>
 
     <!-- Scripts -->
+    {{-- Vuejs --}}
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
@@ -37,6 +39,8 @@
 
     {{-- fontawesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
 
     <!-- Styles -->
     @yield('style')
@@ -103,5 +107,8 @@
             @yield('content')
         </main>
     </div>
+
+    <!-- Script -->
+    @yield('script')
 </body>
 </html>
