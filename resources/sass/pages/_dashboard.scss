@@ -1,0 +1,33 @@
+#dashboard {
+  max-height: calc(100vh - 60px - 48px);
+  overflow-y: auto;
+
+  table {
+    border-color: black !important;
+    background-color: rgba(255,255,255, 0.5);
+
+    thead {
+      background-color: rgba(0,0,0, 0.5);
+      color: #fff;
+
+      th {
+        border-top: 0 !important;
+      }
+    }
+
+    tbody {
+      tr {
+        border-color: grey !important;
+
+        &:hover {
+          background-color: rgba(0,0,0, 0.3) !important;
+          color: #DCDCDC !important;
+        }
+
+        td {
+          border-color: grey !important;
+        }
+      }
+    }
+  }
+}

@@ -31,9 +31,6 @@ html .overlay, body .overlay {
 html .logo_header img, body .logo_header img {
   width: 200px !important;
 }
-html .table, body .table {
-  background-color: rgba(255, 255, 255, 0.3);
-}
 html .fas, body .fas {
   cursor: pointer;
   margin: 0 4px;
@@ -46,6 +43,42 @@ html .fa-hammer, body .fa-hammer {
 }
 html .fa-check-circle, body .fa-check-circle {
   color: #38c172;
+}
+
+.status {
+  margin-top: 80px;
+  background: white;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.2024160006) 90%);
+  padding-top: 3rem;
+}
+.status .lab_name {
+  min-width: 90px;
+}
+
+#dashboard {
+  max-height: calc(100vh - 60px - 48px);
+  overflow-y: auto;
+}
+#dashboard table {
+  border-color: black !important;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+#dashboard table thead {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+#dashboard table thead th {
+  border-top: 0 !important;
+}
+#dashboard table tbody tr {
+  border-color: grey !important;
+}
+#dashboard table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: #DCDCDC !important;
+}
+#dashboard table tbody tr td {
+  border-color: grey !important;
 }
 
 /*!
