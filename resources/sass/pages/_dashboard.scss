@@ -1,8 +1,30 @@
 #dashboard {
   max-height: calc(100vh - 60px - 48px);
-  overflow-y: auto;
+  overflow-y: hidden;
+
+  .btn-success {
+    color: #000 !important;
+    font-weight: 600;
+
+    &:hover {
+      color: rgba(255,255,255, 0.8) !important;
+    }
+  }
+
+  .my-custom-scrollbar {
+    position: relative;
+    max-height: calc(100vh - 60px - 48px - 62px);
+    overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+    display: block;
+    }
 
   table {
+    
+    
+    overflow-y: auto;
+
     border-color: black !important;
     background-color: rgba(255,255,255, 0.5);
 

@@ -38,13 +38,13 @@
               <label for="created"><i class="fas fa-arrow-circle-down"></i></label>
             </div>
 
-            <div>
+            <div class="mt-2">
               <label class="lab_name" for="on_work">In lavoro</label>
               <input type="radio" name="status" id="on_work" value="on_work" {{$work->status == 'on_work'? 'checked' : null}}>
               <label for="on_work"><i class="fas fa-hammer"></i></label>
             </div>
 
-            <div>
+            <div class="mt-2">
               <label class="lab_name" for="completed">Completato</label>
               <input type="radio" name="status" id="completed" value="completed" {{$work->status == 'completed'? 'checked' : null}}>
               <label for="completed"><i class="fas fa-check-circle"></i></label>

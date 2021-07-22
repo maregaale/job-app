@@ -19,8 +19,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// rotte dashboard e modifica status
 Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 Route::get('/status/{id}', 'HomeController@status')->name('status');
 Route::patch('/status/{id}', 'HomeController@statusUpdate')->name('status.update');
+
+// rotte CRUD works
+Route::resource('works', 'WorkController');
 
 
