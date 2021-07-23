@@ -72,6 +72,5 @@
       </div>
       {{-- /bottone submit --}}
     </form>
-    {{-- /form creazione piatto--}}
   </div>
 @endsection

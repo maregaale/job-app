@@ -27,4 +27,9 @@ Route::patch('/status/{id}', 'HomeController@statusUpdate')->name('status.update
 // rotte CRUD works
 Route::resource('works', 'WorkController');
 
+// rotte CRUD steps
+Route::prefix('works/{work}')->name('work.')->group(function () {
+    Route::resource('steps', 'StepController');
+});
+
 

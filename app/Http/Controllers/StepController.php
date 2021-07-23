@@ -8,13 +8,13 @@ use App\Step;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
+
 use Illuminate\Http\Request;
 
-class WorkController extends Controller
+class StepController extends Controller
 {
     protected $validation = [
         'name' => 'required|string',
-        'type' => 'required|string',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
     ];
 
@@ -23,9 +23,10 @@ class WorkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($work)
     {
-        return view('works.create');
+
+        return view('steps.create', ['work' => $work]);
     }
 
     /**
@@ -34,28 +35,31 @@ class WorkController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $work)
     {
-        // validazione
-        $validation = $this->validation;
+         
+         // validazione
+         $validation = $this->validation;
 
-        $request->validate($validation);
+         $request->validate($validation);
+ 
+         $data = $request->all();
 
-        $data = $request->all();
+         // slug nome piatto
+         $data['slug'] = Str::slug($data['name'], '-');
 
-        // slug nome piatto
-        $data['slug'] = Str::slug($data['name'], '-');
-
-        // upload file image
-        if (isset($data['image'])) {
-            $data['image'] = Storage::disk('public')->put('image', $data['image']);
-        }
-
-        // salvo il nuovo piatto a db
-        $newWork = Work::create($data);
-
-        // reinvio alla index
-        return redirect()->route('dashboard');
+         $data['work_id'] = $work;
+ 
+         // upload file image
+         if (isset($data['image'])) {
+             $data['image'] = Storage::disk('public')->put('image', $data['image']);
+         }
+ 
+         // salvo il nuovo piatto a db
+         $newStep = Step::create($data);
+ 
+         // reinvio alla index
+         return redirect()->route('works.show', ['work' => $work]);
     }
 
     /**
@@ -64,10 +68,9 @@ class WorkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Work $work)
+    public function show($id)
     {
-        $steps = Step::all();
-        return view('works.show', ['work' => $work, 'steps' => $steps]);
+        //
     }
 
     /**

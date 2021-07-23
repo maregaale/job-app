@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-lg-12">
             <div class="table-wrapper-scroll-y my-custom-scrollbar">
 
                 <table class=" table table-striped table-hover thead-dark">
@@ -28,7 +28,7 @@
                         <th scope="col">Id</th>
                         <th scope="col">Nome</th>
                         <th scope="col">Settore</th>
-                        <th scope="col">Descrizione</th>
+                        <th class="description" scope="col">Descrizione</th>
                         <th scope="col">Data e ora</th>
                         <th class="text-center" scope="col">Stato</th>
                         <th scope="col">Azioni</th>
@@ -48,8 +48,8 @@
                             <td>
                                 <p>{{$work->type}}</p>
                             </td>
-                            <td>
-                                <p>{{$work->description}}</p>
+                            <td class="description">
+                                <p class="description">{{$work->description}}</p>
                             </td>
                             <td>
                                 <p><span>{{$work->created_at->format('d/m/Y H:i')}}</span> </p>
@@ -83,9 +83,8 @@
                                 <i class="fas fa-trash"></i>
                             </td>
                             <td>
-                                <a href="">
+                                <a href="{{ route('works.show', ['work' => $work]) }}">
                                     <button class="btn btn-primary">Vedi Steps</button>
-
                                 </a>
                             </td>
                         </tr>
