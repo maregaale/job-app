@@ -2,6 +2,20 @@
   max-height: calc(100vh - 60px - 48px);
   overflow-y: hidden;
 
+  .btn_invisible {
+    border: none;
+    background-color: transparent;
+
+    i {
+      color: $red;
+    }
+
+  }
+
+  .fas {
+    cursor: pointer;
+  }
+
   .btn-success {
     color: #000 !important;
     font-weight: 600;
@@ -20,51 +34,5 @@
     display: block;
     }
 
-  table {
-    
-    
-    overflow-y: auto;
-
-    border-color: black !important;
-    background-color: rgba(255,255,255, 0.5);
-
-    .description {
-      max-width: 290px !important;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      @media screen and (max-width: 1200px) {
-        max-width: 230px !important;
-      }
-
-      @media screen and (max-width: 992px) {
-        max-width: 180px !important;
-      }
-    }
-
-    thead {
-      background-color: rgba(0,0,0, 0.5);
-      color: #fff;
-
-      th {
-        border-top: 0 !important;
-      }
-    }
-
-    tbody {
-      tr {
-        border-color: grey !important;
-
-        &:hover {
-          background-color: rgba(0,0,0, 0.3) !important;
-          color: #DCDCDC !important;
-        }
-
-        td {
-          border-color: grey !important;
-        }
-      }
-    }
-  }
+  
 }

@@ -11,6 +11,12 @@ html, body {
   position: relative;
   z-index: 2;
 }
+html a, body a {
+  color: currentColor;
+}
+html a:hover, body a:hover {
+  color: currentColor;
+}
 html main, body main {
   position: relative;
 }
@@ -32,8 +38,10 @@ html .logo_header img, body .logo_header img {
   width: 200px !important;
 }
 html .fas, body .fas {
-  cursor: pointer;
   margin: 0 4px;
+}
+html .lab_name, body .lab_name {
+  min-width: 90px;
 }
 html .fa-arrow-circle-down, body .fa-arrow-circle-down {
   color: #e3342f;
@@ -43,6 +51,44 @@ html .fa-hammer, body .fa-hammer {
 }
 html .fa-check-circle, body .fa-check-circle {
   color: #38c172;
+}
+html table, body table {
+  overflow-y: auto;
+  border-color: black !important;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+html table .description, body table .description {
+  max-width: 290px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media screen and (max-width: 1200px) {
+  html table .description, body table .description {
+    max-width: 230px !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  html table .description, body table .description {
+    max-width: 180px !important;
+  }
+}
+html table thead, body table thead {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+html table thead th, body table thead th {
+  border-top: 0 !important;
+}
+html table tbody tr, body table tbody tr {
+  border-color: grey !important;
+}
+html table tbody tr:hover, body table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  color: #DCDCDC !important;
+}
+html table tbody tr td, body table tbody tr td {
+  border-color: grey !important;
 }
 
 ::-webkit-scrollbar-track {
@@ -70,14 +116,22 @@ html .fa-check-circle, body .fa-check-circle {
   background: white;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0.2024160006) 90%);
   padding-top: 3rem;
-}
-.status .lab_name {
-  min-width: 90px;
+  border-radius: 5px;
 }
 
 #dashboard {
   max-height: calc(100vh - 60px - 48px);
   overflow-y: hidden;
+}
+#dashboard .btn_invisible {
+  border: none;
+  background-color: transparent;
+}
+#dashboard .btn_invisible i {
+  color: #e3342f;
+}
+#dashboard .fas {
+  cursor: pointer;
 }
 #dashboard .btn-success {
   color: #000 !important;
@@ -94,46 +148,9 @@ html .fa-check-circle, body .fa-check-circle {
 #dashboard .table-wrapper-scroll-y {
   display: block;
 }
-#dashboard table {
-  overflow-y: auto;
-  border-color: black !important;
-  background-color: rgba(255, 255, 255, 0.5);
-}
-#dashboard table .description {
-  max-width: 290px !important;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-@media screen and (max-width: 1200px) {
-  #dashboard table .description {
-    max-width: 230px !important;
-  }
-}
-@media screen and (max-width: 992px) {
-  #dashboard table .description {
-    max-width: 180px !important;
-  }
-}
-#dashboard table thead {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-}
-#dashboard table thead th {
-  border-top: 0 !important;
-}
-#dashboard table tbody tr {
-  border-color: grey !important;
-}
-#dashboard table tbody tr:hover {
-  background-color: rgba(0, 0, 0, 0.3) !important;
-  color: #DCDCDC !important;
-}
-#dashboard table tbody tr td {
-  border-color: grey !important;
-}
 
 .create {
+  border-radius: 5px;
   max-height: calc(100vh - 60px - 48px);
   overflow-y: auto;
   background-color: rgba(255, 255, 255, 0.4);
@@ -149,6 +166,9 @@ html .fa-check-circle, body .fa-check-circle {
   min-width: 90px;
 }
 
+.step_container {
+  margin-top: 30px;
+}
 .step_container .step div {
   width: calc(100% / 3);
 }

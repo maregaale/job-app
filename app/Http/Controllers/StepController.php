@@ -5,8 +5,10 @@ use App\Work;
 use App\Step;
 
 
+
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 
 use Illuminate\Http\Request;
@@ -102,8 +104,14 @@ class StepController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Step $step)
     {
-        //
+        dd($step);
+        $step->delete();
+
+        DB::statement("ALTER TABLE steps_table AUTO_INCREMENT = $step->id");
+
+        // reinvio alla index
+        return redirect()->route('works.show');
     }
 }

@@ -9,7 +9,13 @@ html, body {
   position: relative;
   z-index: 2;
 
-  
+  a {
+    color: currentColor;
+
+    &:hover {
+      color: currentColor; 
+    }
+  }
 
   main {
     position: relative;
@@ -38,8 +44,11 @@ html, body {
   }
 
   .fas {
-    cursor: pointer;
     margin: 0 4px;
+  }
+
+  .lab_name {
+    min-width: 90px;
   }
 
   .fa-arrow-circle-down {
@@ -54,7 +63,53 @@ html, body {
     color: $green;
   } 
 
+  table {
+    
+    
+    overflow-y: auto;
 
+    border-color: black !important;
+    background-color: rgba(255,255,255, 0.5);
+
+    .description {
+      max-width: 290px !important;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      @media screen and (max-width: 1200px) {
+        max-width: 230px !important;
+      }
+
+      @media screen and (max-width: 992px) {
+        max-width: 180px !important;
+      }
+    }
+
+    thead {
+      background-color: rgba(0,0,0, 0.5);
+      color: #fff;
+
+      th {
+        border-top: 0 !important;
+      }
+    }
+
+    tbody {
+      tr {
+        border-color: grey !important;
+
+        &:hover {
+          background-color: rgba(0,0,0, 0.3) !important;
+          color: #DCDCDC !important;
+        }
+
+        td {
+          border-color: grey !important;
+        }
+      }
+    }
+  }
 }
 
 ::-webkit-scrollbar-track

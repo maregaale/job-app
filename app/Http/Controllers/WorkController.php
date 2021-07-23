@@ -7,6 +7,7 @@ use App\Step;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
@@ -76,9 +77,9 @@ class WorkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Work $work)
     {
-        //
+        return view('works.edit', ['work' => $work]);
     }
 
     /**
@@ -88,9 +89,29 @@ class WorkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Work $work)
     {
-        //
+        // validazione
+        $validation = $this->validation;
+
+        $request->validate($validation);
+
+        $data = $request->all();
+
+        // slug nome piatto
+        $data['slug'] = Str::slug($data['name'], '-');
+
+        // upload file image
+        if (isset($data['image'])) {
+            $data['image'] = Storage::disk('public')->put('image', $data['image']);
+        }
+
+        // salvo il nuovo piatto a db
+        $work->update($data);
+
+        // reinvio alla index
+        return redirect()->route('dashboard');
+    
     }
 
     /**
@@ -99,8 +120,13 @@ class WorkController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Work $work)
     {
-        //
+        $work->delete();
+
+        // DB::statement("ALTER TABLE works AUTO_INCREMENT = 1");
+
+        // reinvio alla index
+        return redirect()->route('dashboard');
     }
 }

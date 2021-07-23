@@ -79,8 +79,17 @@
                             
                             </td>
                             <td>
-                                <i class="fas fa-pencil-alt"></i>
-                                <i class="fas fa-trash"></i>
+                                <a href="{{route('works.edit', ['work' => $work->id] )}}">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+
+                                {{-- form della delete --}} 
+                                <form class="d-inline-block" action="{{route('works.destroy', ['work' => $work->id] )}}" method="POST"> 
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn_invisible"><i class="fas fa-trash"></i></button>
+                                  </form>
+                              {{-- /form della delete --}}
                             </td>
                             <td>
                                 <a href="{{ route('works.show', ['work' => $work]) }}">

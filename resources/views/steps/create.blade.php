@@ -11,7 +11,15 @@
 
 
 @section('content')
-  <div class="container">
+  <div class="container create">
+    {{-- bottone link a work --}}
+    <div class="text-center mt-3">
+      <a href="{{route('works.show', ['work' => $work])}}">
+        <button class="btn btn-dark"">Torna al tuo lavoro</button>
+      </a>
+    </div>
+    {{-- /bottone link a work --}}
+
     <h1 class="text-center">Crea un nuovo step</h1>
 
     <form action="{{route('work.steps.store', ['work' => $work])}}" method="POST" class="" enctype="multipart/form-data">

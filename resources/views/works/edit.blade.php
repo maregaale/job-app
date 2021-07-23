@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('pageTitle')
-    Olisails | create new work
+    Olisails | Modifica {{$work->name}}
 @endsection
 
 
@@ -20,26 +20,26 @@
     </div>
     {{-- /bottone link a dashboard --}}
 
-    <h1 class="text-center">Crea un nuovo lavoro</h1>
+    <h1 class="text-center">Modifica il tuo lavoro '{{$work->name}}'</h1>
 
-    <form action="{{route('works.store')}}" method="POST" class="" enctype="multipart/form-data">
-      @method('POST')
+    <form action="{{route('works.update', ['work' => $work->id])}}" method="POST" class="" enctype="multipart/form-data">
+      @method('PUT')
       @csrf
 
       {{-- input info lavoro --}}
       <div class="form-group form-fields mb-3">
           <label for="name"><h4>Nome:</h4></label>
-          <input type="text" class="form-control" name="name" id="name" placeholder="Inserisci il nome del nuovo lavoro" value="{{ old('name') }}">
+          <input type="text" class="form-control" name="name" id="name" placeholder="Inserisci il nome del nuovo lavoro" value="{{$work->name}}">
       </div>
 
       <div class="form-group form-fields mb-3" >
           <label for="type"><h4>Settore:</h4></label>
-          <input type="text" class="form-control" name="type" id="type" placeholder="Inserisci il settore del nuovo lavoro" value="{{ old('type') }}">
+          <input type="text" class="form-control" name="type" id="type" placeholder="Inserisci il settore del nuovo lavoro" value="{{$work->type}}">
       </div>
 
       <div class="form-group form-fields mb-3">
           <label for="description"><h4>Descrizione:</h4></label>
-          <textarea name="description" class="form-control" id="description" rows='4' placeholder="Descrizione">{{ old('description') }}</textarea>
+          <textarea name="description" class="form-control" id="description" rows='4' placeholder="Descrizione" value="{{$work->description}}">{{$work->description}}</textarea>
       </div>
       {{-- /input info lavoro --}}
 
@@ -48,7 +48,7 @@
           <div>
             <label for="image"><h4>Immagine:</h4></label>
           </div>
-          <input type="file" id="image" name="image" value="{{ old('image') }}">
+          <input type="file" id="image" name="image" value="{{$work->image}}">
       </div>
       {{-- /upload immagine --}}
 

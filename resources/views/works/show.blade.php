@@ -11,7 +11,15 @@
 
 
 @section('content')
-  <div class="container">
+  <div class="container create">
+    {{-- bottone link a dashboard --}}
+    <div class="text-center mt-3">
+      <a href="{{route('dashboard')}}">
+        <button class="btn btn-dark"">Torna alla Dashboard</button>
+      </a>
+    </div>
+    {{-- /bottone link a dashboard --}}
+
     {{-- titolo --}}
     <h1>Il mio lavoro: '{{$work->name}}'</h1>
     {{-- /titolo --}}
@@ -19,8 +27,8 @@
     {{-- tabella lavoro --}}
     <div class="row justify-content-center">
       <div class="col-lg-12">
-        <div class="table-responsive">
-          <table class="table">
+        <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+          <table class="table thead-dark">
             <thead>
               <tr>
                   <th scope="col">Id</th>
@@ -76,7 +84,7 @@
     {{-- /tabella lavoro --}}
 
     <div class="row mb-3">
-      <div class="col-md-12 text-center">
+      <div class="col-md-12 text-center mb-3 mt-3">
           <a href="{{route('work.steps.create', ['work' => $work->id])}}">
               <button class="btn btn-success">Aggiungi un nuovo step</button>
           </a>
@@ -84,6 +92,7 @@
     </div>
 
     @foreach ($work->steps as $step)
+    <hr>
     <div class="row justify-content-center step_container">
       <div class="col-lg-12 ">
         <h2>Step {{$step->id}}:</h2>
@@ -100,19 +109,22 @@
           </div>
 
           @if (isset($step->image))
-          <div>
+          <div class="mb-3">
             <h4>Immagine:</h4>
             <img src="{{asset('storage/' . $step->image )}}" alt="{{$step->name}}" style="width:250px">
           </div>
           @endif
-        </div>
 
-        
+        </div> 
+        {{-- form della delete --}} 
+        {{-- <form class="d-inline-block" action="{{route('work.steps.destroy', ['work' => $work->id, 'step' => $step->id])}}" method="POST"> 
+          @method('DELETE')
+          @csrf
+          <button type="submit" class="btn_invisible"><i class="fas fa-trash"></i></button>
+        </form> --}}
+        {{-- /form della delete --}}
       </div>
     </div>
-        
     @endforeach
-    
-
   </div>
 @endsection
