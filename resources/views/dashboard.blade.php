@@ -27,6 +27,28 @@
     @endif
     {{-- /toast success --}}
 
+    {{-- toast success --}}
+    @if (session('update'))
+    <div class="alert alert-success">
+      {{ session('update') }}
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    @endif
+    {{-- /toast success --}}
+
+    {{-- toast success --}}
+    @if (session('status'))
+    <div class="alert alert-success">
+      {{ session('status') }}
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    @endif
+    {{-- /toast success --}}
+
     <div class="row mb-3">
         <div class="col-md-12 text-center">
             <a href="{{route('works.create')}}">

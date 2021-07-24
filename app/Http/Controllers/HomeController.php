@@ -52,6 +52,6 @@ class HomeController extends Controller
 
         $work->save();
         
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('status', "lo stato del lavoro '".$work->name. "' è stato modificato in " . (($request->status == 'created') ? 'CREATO' : (($request->status == 'on_work') ? 'IN LAVORO' : (($request->status == 'completed') ? 'COMPLETATO' : '' ))));
     }
 }
