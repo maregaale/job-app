@@ -9,6 +9,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 @endsection
 
+@section('overlay')
+    <div class="overlay over_work_show">
+    </div>
+@endsection
+
 
 @section('content')
   <div class="container create">

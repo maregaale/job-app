@@ -9,9 +9,20 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 @endsection
 
-
 @section('content')
   <div class="container create">
+    {{-- errori --}}
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    {{-- /errori --}}
+    
     {{-- bottone link a work --}}
     <div class="text-center mt-3">
       <a href="{{route('works.show', ['work' => $work])}}">

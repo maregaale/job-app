@@ -8,6 +8,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 @endsection
 
+@section('overlay')
+    <div class="overlay">
+    </div>
+@endsection
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center">

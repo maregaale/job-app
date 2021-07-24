@@ -1,3 +1,10 @@
+.overlay {
+  &.over_dash {
+    background-image: url('../../img/GS48_THS-Sails_2019-01.jpg');
+  }
+}
+
+
 #dashboard {
   max-height: calc(100vh - 60px - 48px);
   overflow-y: hidden;

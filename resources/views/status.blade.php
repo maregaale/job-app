@@ -9,6 +9,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 @endsection
 
+@section('overlay')
+    <div class="overlay over_status">
+    </div>
+@endsection
+
 @section('content')
    
     <div class="status container d-flex flex-column align-items-center">

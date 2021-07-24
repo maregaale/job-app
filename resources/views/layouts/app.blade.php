@@ -48,8 +48,8 @@
 <body>
     <div id="app">
         
-        <div class="overlay">
-        </div>
+        @yield('overlay')
+        
         <nav class="navbar navbar-expand-md navbar-light shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">

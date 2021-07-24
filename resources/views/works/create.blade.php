@@ -9,9 +9,26 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 @endsection
 
+@section('overlay')
+    <div class="overlay over_work_create">
+    </div>
+@endsection
+
 
 @section('content')
   <div class="container create">
+    {{-- errori --}}
+    @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+    {{-- /errori --}}
+    
     {{-- bottone link a dashboard --}}
     <div class="text-center mt-3">
       <a href="{{route('dashboard')}}">

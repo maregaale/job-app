@@ -111,6 +111,17 @@ html table tbody tr td, body table tbody tr td {
   background-color: #555;
 }
 
+.overlay.over_login {
+  background-image: url("../../img/558_gs_34.jpg");
+}
+.overlay.over_register {
+  background-image: url("../../img/VistaAerea2_AA0I1240-scaled-e1582477961221.jpg");
+}
+
+.overlay.over_status {
+  background-image: url("../../img/AA0I4504-scaled-e1582480719253.jpg");
+}
+
 .status {
   margin-top: 80px;
   background: white;
@@ -120,7 +131,7 @@ html table tbody tr td, body table tbody tr td {
 }
 
 .overlay.over_dash {
-  background-image: url("../../img/1233233_10200272495049542_2038343338_o.jpg");
+  background-image: url("../../img/GS48_THS-Sails_2019-01.jpg");
 }
 
 #dashboard {
@@ -153,11 +164,15 @@ html table tbody tr td, body table tbody tr td {
   display: block;
 }
 
+.overlay.over_work_create {
+  background-image: url("../../img/2a5d90b8-690c-48e3-9091-3f72b6e213f2-1-e1574714355970.jpg");
+}
+
 .create {
   border-radius: 5px;
   max-height: calc(100vh - 60px - 48px);
   overflow-y: auto;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.3);
 }
 .create h1 {
   padding: 20px 0;
@@ -170,11 +185,19 @@ html table tbody tr td, body table tbody tr td {
   min-width: 90px;
 }
 
+.overlay.over_work_show {
+  background-image: url("../../img/whitefin-scaled-e1582481325200.jpg");
+}
+
 .step_container {
   margin-top: 30px;
 }
 .step_container .step div {
   width: calc(100% / 3);
+}
+
+.overlay.over_work_edit {
+  background-image: url("../../img/Barcolana18cb_10850-scaled.jpg");
 }
 
 /*!
@@ -4520,7 +4543,7 @@ input[type=button].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.4);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -4577,7 +4600,7 @@ input[type=button].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgba(255, 255, 255, 0.6);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 .card-header:first-child {

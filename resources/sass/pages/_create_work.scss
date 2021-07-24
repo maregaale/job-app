@@ -1,8 +1,14 @@
+.overlay {
+  &.over_work_create {
+    background-image: url('../../img/2a5d90b8-690c-48e3-9091-3f72b6e213f2-1-e1574714355970.jpg');
+  }
+}
+
 .create {
   border-radius: 5px;
   max-height: calc(100vh - 60px - 48px);
   overflow-y: auto;
-  background-color: rgba(255,255,255, 0.4);
+  background-color: rgba(255,255,255, 0.3);
 
   h1 {
     padding: 20px 0;

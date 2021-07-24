@@ -9,8 +9,24 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 @endsection
 
+@section('overlay')
+    <div class="overlay over_dash">
+    </div>
+@endsection
+
 @section('content')
 <div id="dashboard" class="container">
+    {{-- toast success --}}
+    @if (session('create'))
+    <div class="alert alert-success">
+      {{ session('create') }}
+      <button type="button" class="ml-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    @endif
+    {{-- /toast success --}}
+
     <div class="row mb-3">
         <div class="col-md-12 text-center">
             <a href="{{route('works.create')}}">

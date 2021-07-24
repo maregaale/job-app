@@ -56,7 +56,7 @@ class WorkController extends Controller
         $newWork = Work::create($data);
 
         // reinvio alla index
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard')->with('create', "Il lavoro '".$data['name']. "' è stato aggiunto correttamente!");;
     }
 
     /**

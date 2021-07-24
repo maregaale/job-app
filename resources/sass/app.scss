@@ -6,12 +6,16 @@
 
 // Layout
 @import 'layout/app_layout';
+@import 'layout/login_register';
+
 
 // Pages
 @import 'pages/status';
 @import 'pages/dashboard';
 @import 'pages/create_work';
 @import 'pages/show_work';
+@import 'pages/edit_work';
+
 
 
 
