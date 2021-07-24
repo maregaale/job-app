@@ -200,6 +200,13 @@ html table tbody tr td, body table tbody tr td {
   background-image: url("../../img/Barcolana18cb_10850-scaled.jpg");
 }
 
+.card {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+.card .card-header {
+  background-color: rgba(255, 255, 255, 0.6) !important;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
@@ -4543,7 +4550,7 @@ input[type=button].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: #fff;
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
@@ -4600,7 +4607,7 @@ input[type=button].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(0, 0, 0, 0.03);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 .card-header:first-child {

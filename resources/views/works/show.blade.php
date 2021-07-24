@@ -16,11 +16,11 @@
 
 
 @section('content')
-  <div class="container create">
+  <div id="work-show" class="container create">
     {{-- bottone link a dashboard --}}
     <div class="text-center mt-3">
       <a href="{{route('dashboard')}}">
-        <button class="btn btn-dark"">Torna alla Dashboard</button>
+        <button class="btn btn-dark">Torna alla Dashboard</button>
       </a>
     </div>
     {{-- /bottone link a dashboard --}}
@@ -96,7 +96,37 @@
       </div>
     </div>
 
-    @foreach ($work->steps as $step)
+    <div v-for="(step, index) in steps">
+      <hr>
+      <div class="row justify-content-center step_container">
+        <div class="col-lg-12 ">
+          <h2>Step @{{index + 1}}:</h2>
+
+          <div class="d-flex step">
+            <div>
+              <h4>Nome:</h4>
+              <p>@{{step.name}}</p>
+            </div>
+
+            <div>
+              <h4>Descrizione:</h4>
+              <p>@{{step.description}}</p>
+            </div>
+
+            <div v-if="step.image != null" class="mb-3">
+              <h4>Immagine:</h4>
+              @foreach ($work->steps as $el)
+                @if (isset($el->image))
+                <img src="{{asset('storage/' . $el->image)}}" alt="{{$el->name}}" style="width:250px">
+                @endif
+              @endforeach
+            </div>
+          </div> 
+        </div>
+      </div>
+    </div>
+
+    {{-- @foreach ($work->steps as $step)
     <hr>
     <div class="row justify-content-center step_container">
       <div class="col-lg-12 ">
@@ -121,15 +151,31 @@
           @endif
 
         </div> 
-        {{-- form della delete --}} 
-        {{-- <form class="d-inline-block" action="{{route('work.steps.destroy', ['work' => $work->id, 'step' => $step->id])}}" method="POST"> 
-          @method('DELETE')
-          @csrf
-          <button type="submit" class="btn_invisible"><i class="fas fa-trash"></i></button>
-        </form> --}}
-        {{-- /form della delete --}}
       </div>
     </div>
-    @endforeach
+    @endforeach --}}
   </div>
 @endsection
+
+@section('script')
+  <script>
+    new Vue ({
+      el: "#work-show",
+      data: {
+        steps: [],
+
+      },
+      methods: {
+
+      },
+      mounted: function mounted() {
+        var _this = this;
+
+        axios.get('http://localhost:8000/api/show/' + {{$work->id}}).then(function (resp) {
+          console.log(resp.data);
+          _this.steps = resp.data;
+        });
+      },
+    });
+  </script>
+@endsection 
