@@ -32,7 +32,7 @@
     {{-- tabella lavoro --}}
     <div class="row justify-content-center">
       <div class="col-lg-12">
-        <div class="table-responsive table-wrapper-scroll-y my-custom-scrollbar">
+        <div class="show_work table-responsive table-wrapper-scroll-y my-custom-scrollbar">
           <table class="table thead-dark">
             <thead>
               <tr>
@@ -100,25 +100,28 @@
       <hr>
       <div class="row justify-content-center step_container">
         <div class="col-lg-12 ">
-          <h2>Step @{{index + 1}}:</h2>
+          <h2 class="step_index">Step @{{index + 1}}:</h2>
 
           <div class="d-flex step">
             <div>
-              <h4>Nome:</h4>
+              <h4 class="step_name">Nome:</h4>
               <p>@{{step.name}}</p>
             </div>
 
             <div>
-              <h4>Descrizione:</h4>
+              <h4 class="step_description">Descrizione:</h4>
               <p>@{{step.description}}</p>
             </div>
 
             <div v-if="step.image != null" class="mb-3">
-              <h4>Immagine:</h4>
-              @foreach ($work->steps as $el)
-                @if (isset($el->image))
-                <img src="{{asset('storage/' . $el->image)}}" alt="{{$el->name}}" style="width:250px">
-                @endif
+              <h4 class="step_image">Immagine:</h4>
+              @foreach ($work->steps as  $el)
+                <div v-if="step.id == {{ json_encode($el->id) }}">
+
+                  @if (isset($el->image))
+                  <img src="{{asset('storage/' . $el->image)}}" alt="{{$el->name}}" style="width:250px">
+                  @endif
+                </div>
               @endforeach
             </div>
           </div> 

@@ -10,7 +10,28 @@
   .step {
   
     div {
-      width: calc(100% / 3);
+      width: calc((100% / 3) - 30px);
+      margin: 5px;
+    }
+
+    p {
+      word-break: break-all;
     }
   }
+
+}
+
+.show_work {
+
+  .fas {
+    font-size: 20px;
+  }
+}
+
+.step_name, .step_description, .step_image {
+  color: $blueDigit;
+}
+
+.step_index {
+  color: hsl(220,95%,8%);
 }

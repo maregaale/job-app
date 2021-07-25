@@ -196,7 +196,23 @@ html table tbody tr td, body table tbody tr td {
   margin-top: 30px;
 }
 .step_container .step div {
-  width: calc(100% / 3);
+  width: calc((100% / 3) - 30px);
+  margin: 5px;
+}
+.step_container .step p {
+  word-break: break-all;
+}
+
+.show_work .fas {
+  font-size: 20px;
+}
+
+.step_name, .step_description, .step_image {
+  color: #1633ff;
+}
+
+.step_index {
+  color: #010e28;
 }
 
 .overlay.over_work_edit {
