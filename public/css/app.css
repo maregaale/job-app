@@ -148,6 +148,9 @@ html table tbody tr td, body table tbody tr td {
 #dashboard .fas {
   cursor: pointer;
 }
+#dashboard .fa-arrow-circle-down, #dashboard .fa-hammer, #dashboard .fa-check-circle {
+  font-size: 20px;
+}
 #dashboard .btn-success {
   color: #000 !important;
   font-weight: 600;
