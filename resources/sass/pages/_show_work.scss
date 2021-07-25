@@ -4,6 +4,17 @@
   }
 }
 
+#work-show {
+  h1 {
+    color: hsl(220,95%,8%);
+    font-weight: bold;
+    
+    span {
+      text-transform: capitalize;
+    }
+  }
+}
+
 .step_container {
   margin-top: 30px;
 
@@ -33,5 +44,5 @@
 }
 
 .step_index {
-  color: hsl(220,95%,8%);
+  color: rgba(1, 14, 40, 0.9);
 }

@@ -192,6 +192,14 @@ html table tbody tr td, body table tbody tr td {
   background-image: url("../../img/whitefin-scaled-e1582481325200.jpg");
 }
 
+#work-show h1 {
+  color: #010e28;
+  font-weight: bold;
+}
+#work-show h1 span {
+  text-transform: capitalize;
+}
+
 .step_container {
   margin-top: 30px;
 }
@@ -208,11 +216,11 @@ html table tbody tr td, body table tbody tr td {
 }
 
 .step_name, .step_description, .step_image {
-  color: #1633ff;
+  color: rgba(22, 51, 255, 0.7);
 }
 
 .step_index {
-  color: #010e28;
+  color: rgba(1, 14, 40, 0.9);
 }
 
 .overlay.over_work_edit {

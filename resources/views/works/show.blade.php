@@ -26,7 +26,7 @@
     {{-- /bottone link a dashboard --}}
 
     {{-- titolo --}}
-    <h1>Il mio lavoro: '{{$work->name}}'</h1>
+    <h1>Il mio lavoro: <span>{{$work->name}}</span></h1>
     {{-- /titolo --}}
 
     {{-- tabella lavoro --}}
@@ -100,7 +100,7 @@
       <hr>
       <div class="row justify-content-center step_container">
         <div class="col-lg-12 ">
-          <h2 class="step_index">Step @{{index + 1}}:</h2>
+          <h2 class="step_index mb-3">Step @{{index + 1}}:</h2>
 
           <div class="d-flex step">
             <div>
@@ -129,34 +129,6 @@
       </div>
     </div>
 
-    {{-- @foreach ($work->steps as $step)
-    <hr>
-    <div class="row justify-content-center step_container">
-      <div class="col-lg-12 ">
-        <h2>Step {{$step->id}}:</h2>
-
-        <div class="d-flex step">
-          <div>
-            <h4>Nome:</h4>
-            <p>{{$step->name}}</p>
-          </div>
-
-          <div>
-            <h4>Descrizione:</h4>
-            <p>{{$step->description}}</p>
-          </div>
-
-          @if (isset($step->image))
-          <div class="mb-3">
-            <h4>Immagine:</h4>
-            <img src="{{asset('storage/' . $step->image )}}" alt="{{$step->name}}" style="width:250px">
-          </div>
-          @endif
-
-        </div> 
-      </div>
-    </div>
-    @endforeach --}}
   </div>
 @endsection
 
