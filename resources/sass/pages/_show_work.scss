@@ -17,7 +17,22 @@
   .work_img_container {
     img {
       max-width: 100%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      -moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      -o-box-shadow: 0 0 10px rgba(0,0,0,0.6);
     }
+  }
+
+  .step_img_container {
+    img {
+      width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      -moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+      -o-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    }
+
   }
 }
 
@@ -33,6 +48,7 @@
 
     p {
       word-break: break-all;
+      color: #4d4d4d;
     }
   }
 

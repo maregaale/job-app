@@ -84,7 +84,7 @@
             </tbody>
           </table>
 
-          <div class="work_img_container text-center mb-3">
+          <div class="work_img_container text-center mb-3 pt-1">
             @if (isset($work->image))
             <img src="{{asset('storage/' . $work->image)}}" alt="{{$work->name}}">                
             @endif
@@ -122,10 +122,10 @@
             <div v-if="step.image != null" class="mb-3">
               <h4 class="step_image">Immagine:</h4>
               @foreach ($work->steps as  $el)
-                <div v-if="step.id == {{ json_encode($el->id) }}">
+                <div class="step_img_container" v-if="step.id == {{ json_encode($el->id) }}">
 
                   @if (isset($el->image))
-                  <img src="{{asset('storage/' . $el->image)}}" alt="{{$el->name}}" style="width:250px">
+                  <img src="{{asset('storage/' . $el->image)}}" alt="{{$el->name}}">
                   @endif
                 </div>
               @endforeach
