@@ -83,6 +83,12 @@
                 </tr>
             </tbody>
           </table>
+
+          <div class="work_img_container text-center mb-3">
+            @if (isset($work->image))
+            <img src="{{asset('storage/' . $work->image)}}" alt="{{$work->name}}">                
+            @endif
+          </div>
         </div>
       </div>
     </div>

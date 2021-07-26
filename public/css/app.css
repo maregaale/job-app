@@ -199,6 +199,9 @@ html table tbody tr td, body table tbody tr td {
 #work-show h1 span {
   text-transform: capitalize;
 }
+#work-show .work_img_container img {
+  max-width: 100%;
+}
 
 .step_container {
   margin-top: 30px;

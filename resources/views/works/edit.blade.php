@@ -73,19 +73,19 @@
 
       <div>
         <label class="lab_name" for="created">Creato</label>
-        <input type="radio" name="status" id="created" value="created" checked>
+        <input type="radio" name="status" id="created" value="created" {{$work->status == 'created' ? 'checked' : ''}}>
         <label for="created"><i class="fas fa-arrow-circle-down"></i></label>
       </div>
 
       <div class="mt-2">
         <label class="lab_name" for="on_work">In lavoro</label>
-        <input type="radio" name="status" id="on_work" value="on_work">
+        <input type="radio" name="status" id="on_work" value="on_work" {{$work->status == 'on_work' ? 'checked' : ''}}>
         <label for="on_work"><i class="fas fa-hammer"></i></label>
       </div>
 
       <div class="mt-2">
         <label class="lab_name" for="completed">Completato</label>
-        <input type="radio" name="status" id="completed" value="completed">
+        <input type="radio" name="status" id="completed" value="completed" {{$work->status == 'completed' ? 'checked' : ''}}>
         <label for="completed"><i class="fas fa-check-circle"></i></label>
       </div>
       {{-- /status --}}

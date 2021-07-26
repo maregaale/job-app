@@ -13,6 +13,12 @@
       text-transform: capitalize;
     }
   }
+
+  .work_img_container {
+    img {
+      max-width: 100%;
+    }
+  }
 }
 
 .step_container {
